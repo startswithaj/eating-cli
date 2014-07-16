@@ -1,5 +1,7 @@
 # eating-cli
 
+[![Build Status]](https://travis-ci.org/startswithaj/eating-cli)
+
 
 **eating** is a very simple node.js command line application for recording what you eat (a meal diary/journal). Inspired by [doing](http://brettterpstra.com/projects/doing/) it takes near to natural language input and turns that into structured meals. There's also a web version at [eatkeep.io](https:/www.eatkeep.io)
 
@@ -48,11 +50,11 @@ eating has 2 configurable options
 eating --path '~/Google Drive/eating'
 ```
 - locale
--- date locale defaults to nodes default usually en-US (mm/dd/yyyy)
- - ```
+ - date locale defaults to nodes default usually en-US (mm/dd/yyyy)
+ - if set to 'en-AU' it will then parse dates as dd/mm/yyyy
+```
 eating --locale 'en-AU'
- ```
-it will then parse dates as dd/mm/yyyy
+```
 
 
 ##How to use
@@ -106,3 +108,5 @@ If you find a bug or have any problems create an github issue or email me at my 
 
 n.b. I have only tested this on OS X
 
+<!-- references -->
+[Build Status]: http://img.shields.io/travis/startswithaj/eating-cli/master.svg
