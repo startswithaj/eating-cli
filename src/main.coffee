@@ -13,14 +13,19 @@ delete Array.prototype.all
 
 program
   .version(require('../package.json').version)
-  .option('-p, --path <path>', 'set data path. defaults to ~/.eatingdata must be an absolute path /User/blah/etc')
+  .option('-p, --path <path>', 'set data path. defaults to ~/.eatingdata')
   # .option('-c, --confirm <boolean>', 'confirms meal parse result before saving. defaults to true')
   .option('-l, --locale <string>', 'Date Locale for parsing date formats accepts en-US (default), en-UK, en-AU')
   .option('-c, --config', 'Outputs current config')
   .option('-r, --reset', 'Will restore default config')
 
 program
+  .command 'help'
+  .action program.help
+
+program
   .command 'remove <id>'
+  .alias 'rm'
   .description 'finds and removes the mealId provided also accepts \'last\''
   .action new Eating().removeMeal
   .on '--help', ->
@@ -32,6 +37,7 @@ program
 
 program
   .command 'list <startDate> [endDate]'
+  .alias 'show'
   .option "-t, --txt <filePath>", "Export to txt file"
   .option "-j, --json <filePath>", "Export to .json file"
   .description 'see eating list --help for full usage'
