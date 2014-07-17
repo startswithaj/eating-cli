@@ -1,6 +1,6 @@
 {
   "name": "eating",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "eating. A natural language command line food diary.",
   "scripts": {
     "test": "mocha",

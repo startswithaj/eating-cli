@@ -55,10 +55,10 @@ module.exports = class eating
               return console.log(err)
             console.log('Finished writing', options.txt)
         else if options?.json
-          fs.writeFile options.txt, meals2Text.toJSON(meals), (err) ->
+          fs.writeFile options.json, meals2Text.toJSON(meals), (err) ->
             if (err) 
               return console.log(err)
-            console.log('Finished writing', options.txt)
+            console.log('Finished writing', options.json)
         else
           meals2Text.toConsole meals
 
