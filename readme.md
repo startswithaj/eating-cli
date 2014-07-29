@@ -3,7 +3,7 @@
 [![Build Status]](https://travis-ci.org/startswithaj/eating-cli)
 
 
-**eating** is a very simple node.js command line application for recording what you eat (a meal diary/journal). Inspired by [doing](http://brettterpstra.com/projects/doing/) it takes near to natural language input and turns that into structured meals. There's also a web version at [eatkeep.io](https:/www.eatkeep.io)
+**eating** is a very simple node.js command line application for recording what you eat (a meal diary/journal). Inspired by [doing](http://brettterpstra.com/projects/doing/) it takes near to natural language input and turns that into structured meals. There's also a web version at [eatkeep.io](https://www.eatkeep.io)
 
 
 
