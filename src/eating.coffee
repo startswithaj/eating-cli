@@ -87,7 +87,7 @@ module.exports = class eating
       if err
         console.log err
       else
-        meals2Text.meal2Text meal, true
+        meals2Text.meal2Console meal, true
         console.log "Meal Deleted.".green
     if id is 'last'
       @mealDao.getLastMeal (err, meal) =>
@@ -108,7 +108,7 @@ module.exports = class eating
         console.log 'Could not save meal.'.red, err
       else
         console.log meal.date.format('{Weekday} {Month} {dd}, {yyyy}')
-        console.log meals2Text.meal2Text meal, true
+        console.log meals2Text.meal2Console meal, true
         console.log "Saved.".green
 
   updateOptions: (program) =>
