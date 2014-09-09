@@ -1,6 +1,6 @@
 {
   "name": "eating",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "eating. A natural language command line food diary.",
   "scripts": {
     "test": "mocha",
@@ -16,7 +16,7 @@
   "license": "GNU",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IcecaveStudios/dialekt-js.git"
+    "url": "https://github.com/startswithaj/eating-cli.git"
   },
   "dependencies": {
     "underscore": "",
