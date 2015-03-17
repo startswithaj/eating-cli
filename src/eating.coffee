@@ -9,7 +9,7 @@ fs          = require 'fs'
 
 meals2Text = new EatingUtils.Meals2Text()
 
-module.exports = class eating 
+module.exports = class eating
 
   constructor: (mealDao) ->
     @homeDir = process.env.HOME or process.env.HOMEPATH or process.env.USERPROFILE
@@ -18,8 +18,6 @@ module.exports = class eating
     nconf.load()
     nconf.defaults
       'dbPath': @homeDir + '/.eatingdata'
-      # 'confirmParse': true
-    # confirmParse = nconf.get('confirmParse')
 
     locale = nconf.get('locale')
     if locale
@@ -51,19 +49,19 @@ module.exports = class eating
       else
         if options?.txt
           fs.writeFile options.txt, meals2Text.toTxt(meals, "Eating Food Diary"), (err) ->
-            if (err) 
+            if (err)
               return console.log(err)
             console.log('Finished writing', options.txt)
         else if options?.json
           fs.writeFile options.json, meals2Text.toJSON(meals), (err) ->
-            if (err) 
+            if (err)
               return console.log(err)
             console.log('Finished writing', options.json)
         else
           meals2Text.toConsole meals
 
     if startDate is 'all'
-      return @mealDao.findAll cb      
+      return @mealDao.findAll cb
     else if startDate is 'today'
       startDate = Date.create().beginningOfDay()
       endDate = Date.create().endOfDay()
@@ -79,7 +77,7 @@ module.exports = class eating
         endDate = Date.create(endDate).endOfDay()
       else
         endDate = Date.create(startDate).endOfDay()
-      
+
     @mealDao.findBetweenDates startDate, endDate, cb
 
   removeMeal: (id) =>
@@ -117,9 +115,6 @@ module.exports = class eating
       path = path.replace(/^~\//, @homeDir + '/');
       nconf.set('dbPath', path)
 
-    if confirm = program.confirm
-      nconf.set('confirmParse', program.confirm)
-
     if locale = program.locale
       nconf.set('locale', program.locale)
 
@@ -128,11 +123,11 @@ module.exports = class eating
       console.log "Date Locale:", nconf.get('locale') or 'default'
       console.log()
       return true
-    
+
     if reset = program.reset
       nconf.reset()
 
-    if path or confirm or locale or reset
+    if path or locale or reset
       nconf.save (err) ->
         if err
           console.error 'Error writing configuration', err.message

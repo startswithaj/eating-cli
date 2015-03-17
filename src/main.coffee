@@ -3,14 +3,6 @@
 program     = require 'commander'
 Eating = require('./eating')
 
-eating = 
-
-# ## Bug in commander.js tries to exec arguments that match properties of Array as subcommands
-# ## https://github.com/visionmedia/commander.js/issues/206
-# ## Sugar adds .last and we use it as an arg
-delete Array.prototype.last
-delete Array.prototype.all
-
 program
   .version(require('../package.json').version)
   .option('-p, --path <path>', 'set data path. defaults to ~/.eatingdata')
@@ -21,7 +13,9 @@ program
 
 program
   .command 'help'
-  .action program.help
+  .description 'shows help'
+  .action ->
+    program.help()
 
 program
   .command 'remove <id>'
@@ -55,10 +49,12 @@ program
 
 program
   .command '*'
-  .description 'process arguments as a meal string'
-  .action ->
-    args = this.rawArgs
-    # firt 2 is > node eating
+  .description 'process arguments as a meal string i.e eating hotdog 5pm 500cals'
+  .action () ->
+    # commander doesn't support unspecifed number of arguments
+    # it passes them in as individual named arguemnts
+    # we want all arguments after the firt 2 (i.e node eating ...)
+    args = process.argv
     args = args.slice(2, args.length)
     new Eating().processArgString(args)
 

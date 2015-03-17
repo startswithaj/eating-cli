@@ -1,6 +1,6 @@
 {
   "name": "eating",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "eating. A natural language command line food diary.",
   "scripts": {
     "test": "mocha",
@@ -21,11 +21,11 @@
   "dependencies": {
     "underscore": "",
     "sugar": "latest",
-    "commander": "^2.3.0",
-    "colors": "^0.6.2",
+    "commander": "2.7.1",
+    "colors": "0.6.2",
     "nconf": "latest",
     "tungus": "0.0.2",
-    "mongoose": "^3.8.13",
+    "mongoose": "3.8.13",
     "eating-utils": "0.1.8"
   },
   "devDependencies": {

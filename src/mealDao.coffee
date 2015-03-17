@@ -1,4 +1,3 @@
-#db
 tungus = require 'tungus'
 mongoose = require 'mongoose'
 Meal = require './models/meal'
