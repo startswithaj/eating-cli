@@ -13,7 +13,7 @@
 eating 7 ham and pineapple pizzas 2 hours ago 7000!
 ```
 
-would yeild
+would yield
 
 - Date: (UTC the date/time 2 hours ago)
 - Foods: 7 Ham & Pineapple Pizzas
